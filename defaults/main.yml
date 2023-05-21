@@ -206,12 +206,12 @@ postgresql_restart_after_crash: true
 # -----------------------------------------------------------------------------
 postgresql_hba_auth_host: trust
 postgresql_hba_auth_local: trust
-postgresql_hba_entries: {}
+postgresql_hba_entries: []
 
 # -----------------------------------------------------------------------------
 # USER NAME MAPS (PG_IDENT)
 # -----------------------------------------------------------------------------
-postgresql_ident_entries: {}
+postgresql_ident_entries: []
 
 # -----------------------------------------------------------------------------
 # EXTENSIONS
