@@ -1,0 +1,29 @@
+---
+dependency:
+  name: galaxy
+  options:
+    requirements-file: molecule/requirements.yml
+driver:
+  name: podman
+platforms:
+  - name: ubuntu2204
+    image: ubuntu:22-04-ansible
+    dockerfile: ../Dockerfile.ubuntu2204
+    command: /sbin/init
+    systemd: always
+provisioner:
+  name: ansible
+  config_options:
+    defaults:
+      callbacks_enabled: profile_tasks, timer, yaml
+  ssh_connection:
+    pipelining: true
+  inventory:
+    links:
+      group_vars: inventory/group_vars/
+verifier:
+  name: ansible
+lint: |
+    set -e
+    yamllint .
+    ansible-lint .
