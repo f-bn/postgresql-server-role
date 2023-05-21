@@ -88,7 +88,7 @@ More informations in the official SSL/TLS [documentation](https://www.postgresql
 
 #### Manage PostgreSQL extensions
 
-You can enable/disable database extensions using this role. Firstly, to use some extensions, you need install 3rd-party packages. You can update the `postgresql_packages` array for that :
+You can enable/disable database extensions using this role. Firstly, to use some extensions, you need to install 3rd-party packages. You can update the `postgresql_packages` array for that :
 
 ```YAML
 # Here we want to enable at least 'pg_cron' and 'pg_repack', therefore we need to install 2 additional packages
@@ -101,7 +101,7 @@ postgresql_packages:
   - "libpq-dev"
 ```
 
-Then, some extensions requires some librairies to be loaded on server startup, but also some custom settings present in the server configuration file. Adjust as needed :
+Then, some extensions requires some libraries to be loaded on server startup, but also some custom settings must be present in the server configuration file :
 
 ```YAML
 postgresql_shared_preload_libraries:
@@ -117,7 +117,7 @@ postgresql_extra_configurations:
   - 'cron.use_background_workers = on'
 ```
 
-Finally, you simple have to choose witch extensions you want to enable and in which database(s) (depending on the extension) :
+Finally, you simple have to choose which extensions you want to enable (and in which database(s) depending on the extension) :
 
 ```YAML
 postgresql_extensions:
