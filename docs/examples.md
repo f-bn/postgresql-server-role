@@ -86,4 +86,50 @@ postgres=#
 
 More informations in the official SSL/TLS [documentation](https://www.postgresql.org/docs/current/ssl-tcp.html)
 
+#### Manage PostgreSQL extensions
+
+You can enable/disable database extensions using this role. Firstly, to use some extensions, you need install 3rd-party packages. You can update the `postgresql_packages` array for that :
+
+```YAML
+# Here we want to enable at least 'pg_cron' and 'pg_repack', therefore we need to install 2 additional packages
+postgresql_packages:
+  - "postgresql-{{ postgresql_release }}={{ postgresql_version }}-1.pgdg{{ ansible_distribution_version }}+1"
+  - "postgresql-client-{{ postgresql_release }}={{ postgresql_version }}-1.pgdg{{ ansible_distribution_version }}+1"
+  - "postgresql-{{ postgresql_release }}-cron"
+  - "postgresql-{{ postgresql_release }}-repack"
+  - "python3-psycopg2"
+  - "libpq-dev"
+```
+
+Then, some extensions requires some librairies to be loaded on server startup, but also some custom settings present in the server configuration file. Adjust as needed :
+
+```YAML
+postgresql_shared_preload_libraries:
+  - pg_stat_statements
+  - pg_prewarm
+  - pg_cron
+
+postgresql_extra_configurations:
+  - 'pg_stat_statements.max = 10000'
+  - 'pg_stat_statements.track = all'
+  - 'pg_prewarm.autoprewarm = true'
+  - 'pg_prewarm.autoprewarm_interval = 300s'
+  - 'cron.use_background_workers = on'
+```
+
+Finally, you simple have to choose witch extensions you want to enable and in which database(s) (depending on the extension) :
+
+```YAML
+postgresql_extensions:
+  - name: pg_stat_statements
+    databases: ['mydb1','mydb2']
+    state: present
+  - name: pg_prewarm
+    state: present
+  - name: pg_buffercache
+    state: present
+  - name: pg_cron
+    state: present
+```
+
 [Return to main page](../README.md)
