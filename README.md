@@ -4,7 +4,7 @@
 
 ### General informations
 
-This Ansible role is designed to deploy and configure standalone PostgreSQL instance(s) on target servers. This role is a new version of my previous [role](https://github.com/f-bn/postgresql-server-role) with the objective of providing a more featureful "all-in-one" oriented stack to manage PostgreSQL instances (users, databases, extensions), but also looking to remove uneeded hassle (i.e no more multi-OS support, support of testing version deployment...).
+This Ansible role is designed to deploy and configure standalone PostgreSQL instance(s) on target servers. This role is a new version of my previous [role](https://github.com/f-bn/postgresql-server-role) with the objective of providing a more featureful "all-in-one" oriented stack to manage PostgreSQL instances (users, databases, extensions), but also looking to remove uneeded hassle (i.e no more multi-OS support, remove support of testing version deployment...).
 
 **Table of Contents**
 
