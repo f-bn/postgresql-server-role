@@ -24,7 +24,7 @@ Role Variables
 | :-------------------------------- | :--------------------------- | :--------------------------------------------------------------- |
 |`postgresql_repo_url`              | see [defaults](../defaults/main.yml) | Defines the PostgreSQL packages repository URL           |
 |`postgresql_repo_gpgkey_url`       | see [defaults](../defaults/main.yml) | Defines the PostgreSQl packages repository GPG key URL   |
-|`postgresql_packages`              | see [defaults](../defaults/main.yml) | Defines the list of packages to install in order to deploy PostgreSQL (this can also be used to install extra packages for extensions) |
+|`postgresql_packages`              | see [defaults](../defaults/main.yml) | Defines the list of packages to install in order to deploy PostgreSQL (this can also be used to install extra packages like extensions 3rd-party packages) |
 
 #### File locations
 
