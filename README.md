@@ -32,7 +32,8 @@ This role will only supports Ubuntu Server LTS releases :
 The role variables documentation are available here :
 
   - [General](docs/variables.md#general)
-  - [Service](docs/variables.md#service)
+  - [InitDB](docs/variables.md#initdb)
+  - [Repository and packages]((docs/variables.md#repository-and-packages)
   - [File locations](docs/variables.md#file-locations)
   - [Connections and authentication](docs/variables.md#connections-and-authentications)
   - [SSL/TLS](docs/variables.md#ssltls)
@@ -47,6 +48,7 @@ The role variables documentation are available here :
   - [Error handling](docs/variables.md#error-handling)
   - [pg_hba](docs/variables.md#pg_hba)
   - [pg_ident](docs/variables.md#pg_ident)
+  - [Extra configurations](docs/variables.md#extra-configurations)
 
 ### Examples
 
