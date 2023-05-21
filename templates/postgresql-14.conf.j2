@@ -175,7 +175,7 @@ lc_numeric = '{{ postgresql_locale }}'
 lc_time = '{{ postgresql_locale }}'
 
 # - Shared Library Preloading -
-shared_preload_libraries = '{% for lib in postgresql_shared_preload_libraries %}{{ lib }}{%- if not loop.last %}, {% endif %}{% endfor -%}'
+shared_preload_libraries = '{% for lib in postgresql_shared_preload_libraries %}{{ lib }}{%- if not loop.last %},{% endif %}{% endfor -%}'
 
 #------------------------------------------------------------------------------
 # LOCK MANAGEMENT
