@@ -11,7 +11,7 @@ Role Variables
 | `postgresql_shutdown_mode`        | `fast`                       | Defines the shutdown mode to use when stopping instance service. Valid values are `smart` and `fast` |
 | `postgresql_restart_on_changes`   | `false`                      | If set to `true`, restart the instance service when server configuration changes |
 
-#### InitDB
+#### Instance initialization
 
 | Name                              | Default                      | Description                                                      |
 | :-------------------------------- | :--------------------------- | :--------------------------------------------------------------- |

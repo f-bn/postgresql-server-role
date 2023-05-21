@@ -32,8 +32,8 @@ This role will only supports Ubuntu Server LTS releases :
 The role variables documentation are available here :
 
   - [General](docs/variables.md#general)
-  - [InitDB](docs/variables.md#initdb)
-  - [Repository and packages]((docs/variables.md#repository-and-packages)
+  - [Instance initialization](docs/variables.md#instance-initialization)
+  - [Repository and packages](docs/variables.md#repository-and-packages)
   - [File locations](docs/variables.md#file-locations)
   - [Connections and authentication](docs/variables.md#connections-and-authentications)
   - [SSL/TLS](docs/variables.md#ssltls)
