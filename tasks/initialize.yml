@@ -1,0 +1,17 @@
+---
+- name: Check if PostgreSQL data directory has already been initialized
+  ansible.builtin.stat:
+    path: "{{ postgresql_data_dir }}/PG_VERSION"
+  register: initdb_signal
+
+- name: Initialize PostgreSQL data directory (initdb)
+  ansible.builtin.shell: >
+    {{ postgresql_bin_dir }}/initdb
+    --pgdata={{ postgresql_data_dir }}
+    --locale={{ postgresql_locale }}
+    --encoding={{ postgresql_client_encoding }}
+    {{ '--data-checksums' if postgresql_initdb_checksum_enabled }}
+    {{ postgresql_initdb_extra_opts }}
+  become: true
+  become_user: postgres
+  when: not initdb_signal.stat.exists

@@ -1,0 +1,15 @@
+---
+# - General -
+postgresql_restart_on_changes: false
+postgresql_cluster_name: molecule-default
+
+# - InitDB -
+postgresql_initdb_checksum_enabled: true
+
+# - Connection Settings -
+postgresql_listen_addresses: "*"
+
+# - pg_hba entries - 
+postgresql_hba_entries:
+  - { type: local, db: 'all', user: 'all', method: 'scram-sha-256' }
+  - { type: host,  db: 'all', user: 'all', address: '0.0.0.0/0', method: 'scram-sha-256', description: "Allow from everywhere" }
