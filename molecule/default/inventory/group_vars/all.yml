@@ -3,13 +3,47 @@
 postgresql_restart_on_changes: false
 postgresql_cluster_name: molecule-default
 
-# - InitDB -
+# - Database initialization -
 postgresql_initdb_checksum_enabled: true
+
+# - Repository and packages -
+postgresql_packages:
+  - "postgresql-{{ postgresql_release }}={{ postgresql_version }}-1.pgdg{{ ansible_distribution_version }}+1"
+  - "postgresql-client-{{ postgresql_release }}={{ postgresql_version }}-1.pgdg{{ ansible_distribution_version }}+1"
+  - "postgresql-{{ postgresql_release }}-cron"
+  - "postgresql-{{ postgresql_release }}-repack"
+  - "python3-psycopg2"
+  - "libpq-dev"
 
 # - Connection Settings -
 postgresql_listen_addresses: "*"
+
+# - Shared Library Preloading -
+postgresql_shared_preload_libraries:
+  - pg_stat_statements
+  - pg_prewarm
+  - pg_cron
+
+# - Extensions -
+postgresql_extensions:
+  - name: pg_stat_statements
+    state: present
+  - name: pg_prewarm
+    state: present
+  - name: pg_buffercache
+    state: present
+  - name: pg_cron
+    state: present
 
 # - pg_hba entries - 
 postgresql_hba_entries:
   - { type: local, db: 'all', user: 'all', method: 'scram-sha-256' }
   - { type: host,  db: 'all', user: 'all', address: '0.0.0.0/0', method: 'scram-sha-256' }
+
+# - Extra configurations -
+postgresql_extra_configurations:
+  - 'pg_stat_statements.max = 10000'
+  - 'pg_stat_statements.track = all'
+  - 'pg_prewarm.autoprewarm = true'
+  - 'pg_prewarm.autoprewarm_interval = 300s'
+  - 'cron.use_background_workers = on'

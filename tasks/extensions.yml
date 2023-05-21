@@ -1,0 +1,13 @@
+---
+- name: Manage '{{ extension.name }}' extension state
+  community.postgresql.postgresql_ext:
+    name: "{{ extension.name }}"
+    db: "{{ item }}"
+    cascade: "{{ extension.cascade | default(false) }}"
+    version: "{{ extension.version | default(omit) }}"
+    state: "{{ extension.state }}"
+  with_items: "{{ extension.databases | default(['postgres']) }}"
+  loop_control:
+    label: "{{ item }} -> {{ extension.state }}"
+  become: true
+  become_user: postgres

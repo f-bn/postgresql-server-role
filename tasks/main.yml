@@ -20,9 +20,12 @@
 
 #- name: Manage PostgreSQL instance databases
 #  ansible.builtin.import_tasks: databases.yml
-#
+
 #- name: Manage PostgreSQL instance users
 #  ansible.builtin.import_tasks: users.yml
-#
-#- name: Manage PostgreSQL instance extensions
-#  ansible.builtin.import_tasks: extensiosn.yml
+
+- name: Manage PostgreSQL instance extensions
+  ansible.builtin.include_tasks: extensions.yml
+  with_items: "{{ postgresql_extensions }}"
+  loop_control:
+    loop_var: extension
