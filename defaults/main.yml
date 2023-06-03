@@ -33,6 +33,7 @@ postgresql_packages:
   - "postgresql-{{ postgresql_release }}={{ postgresql_version }}-1.pgdg{{ ansible_distribution_version }}+1"
   - "postgresql-client-{{ postgresql_release }}={{ postgresql_version }}-1.pgdg{{ ansible_distribution_version }}+1"
   - "python3-psycopg2"
+  - "libpq-dev"
 
 # -----------------------------------------------------------------------------
 # CONNECTIONS AND AUTHENTICATION
@@ -212,6 +213,17 @@ postgresql_hba_entries: []
 # USER NAME MAPS (PG_IDENT)
 # -----------------------------------------------------------------------------
 postgresql_ident_entries: []
+
+# -----------------------------------------------------------------------------
+# DATABASES
+# -----------------------------------------------------------------------------
+postgresql_databases: []
+
+# -----------------------------------------------------------------------------
+# USERS
+# -----------------------------------------------------------------------------
+postgresql_users: []
+postgresql_users_privileges: []
 
 # -----------------------------------------------------------------------------
 # EXTENSIONS

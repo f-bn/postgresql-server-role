@@ -1,0 +1,32 @@
+---
+- name: Manage instance roles state
+  community.postgresql.postgresql_user:
+    name: "{{ user.name }}"
+    comment: "{{ user.comment | default(omit) }}"
+    password: "{{ user.password | default(omit) }}"
+    encrypted: true
+    expires: "{{ user.expires | default(omit) }}"
+    role_attr_flags: "{{ user.role_attr_flags | default(omit) }}"
+    conn_limit: "{{ user.conn_limit | default(omit) }}"
+    fail_on_user: true
+    state: "{{ user.state | default('present') }}"
+  become: true
+  become_user: postgres
+  with_items: "{{ postgresql_roles }}"
+  loop_control:
+    loop_var: user
+
+- name: Manage instance roles privileges
+  community.postgresql.postgresql_privs:
+    type: "{{ priv.type }}"
+    roles: "{{ priv.roles }}"
+    objs: "{{ priv.objects }}"
+    privs: "{{ priv.privileges }}"
+    schema: "{{ priv.schema | default(omit) }}"
+    database: "{{ priv.database | default('postgres') }}"
+    state: "{{ priv.state | default('present') }}"
+  become: true
+  become_user: postgres
+  with_items: "{{ postgresql_roles_privileges }}"
+  loop_control:
+    loop_var: priv

@@ -24,6 +24,29 @@ postgresql_shared_preload_libraries:
   - pg_prewarm
   - pg_cron
 
+# - Databases -
+postgresql_databases:
+  - name: moleculedb
+    encoding: UTF-8
+    lc_collate: C.UTF-8
+    lc_ctype: C.UTF-8
+
+# - Roles -
+postgresql_roles:
+  - name: molecule
+    comment: "Molecule test user"
+    password: molecule
+    role_attr_flags: "LOGIN"
+    conn_limit: 10
+  - name: johndoe
+    comment: "Molecule test user"
+    password: johndoe
+    role_attr_flags: "LOGIN"
+
+postgresql_roles_privileges:
+  - { type: database, roles: molecule, objects: moleculedb, privileges: 'ALL' }
+  - { type: database, roles: johndoe,  objects: moleculedb, privileges: 'CONNECT' }
+
 # - Extensions -
 postgresql_extensions:
   - name: pg_stat_statements
