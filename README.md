@@ -69,7 +69,7 @@ You can find some configurations examples :
 * Install the role using the command-line :
 
   ```shell
-  $ ansible-galaxy role install git+https://github.com/f-bn/postgresql-role.git
+  $ ansible-galaxy role install git+https://github.com/f-bn/postgresql-server-role.git
   ```
 
 * You can also install the role in your projects using a `requirements.yml` file and `ansible-galaxy` command-line :
@@ -78,8 +78,8 @@ You can find some configurations examples :
   $ cat requirements.yml
   ---
   roles:
-    - name: postgresql
-      src: https://github.com/f-bn/postgresql-role.git
+    - name: postgresql_server
+      src: https://github.com/f-bn/postgresql-server-role.git
       scm: git
       version: '1.0.0'
 
@@ -92,7 +92,7 @@ You can find some configurations examples :
   - name: Install PostgreSQL server
     hosts: postgresql
     roles:
-      - role: postgresql
+      - role: postgresql_server
   ```
 
 ### Roadmap

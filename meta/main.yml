@@ -1,9 +1,9 @@
 ---
 galaxy_info:
-  role_name: postgresql
+  role_name: postgresql_server
   namespace: fbn
   author: f-bn
-  description: Ansible role to deploy and configure standalone PostgreSQL instance(s) 
+  description: Ansible role to deploy and configure standalone PostgreSQL server instance(s) 
   license: BSD-3-Clause
   min_ansible_version: 7.0.0
   platforms:
