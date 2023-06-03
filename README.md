@@ -60,6 +60,8 @@ You can find some configurations examples :
 - [Manage PostgreSQL user name maps (pg_ident)](docs/examples.md#manage-postgresql-user-name-maps-pg_ident)
 - [Manage PostgreSQL synchronous streaming replication parameters](docs/examples.md#manage-postgresql-synchronous-streaming-replication-parameters)
 - [Manage SSL/TLS connections](docs/examples.md#manage-ssltls-connections)
+- [Manage instance databases](docs/examples.md#manage-instance-databases)
+- [Manage instance roles and privileges](docs/examples.md#manage-instance-roles-and-privileges)
 - [Manage PostgreSQL extensions](docs/examples.md#manage-postgresql-extensions)
 
 ### Install and use this role
@@ -92,3 +94,10 @@ You can find some configurations examples :
     roles:
       - role: postgresql
   ```
+
+### Roadmap
+
+- [x] Roles management
+- [x] Databases management
+- [x] Extensions management
+- [ ] Tablespaces management
