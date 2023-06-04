@@ -50,6 +50,9 @@ The role variables documentation are available here :
   - [Error handling](docs/variables.md#error-handling)
   - [pg_hba](docs/variables.md#pg_hba)
   - [pg_ident](docs/variables.md#pg_ident)
+  - [Instance roles and privileges](docs/variables.md#instance-roles-and-privileges)
+  - [Instance databases](docs/variables.md#instance-databases)
+  - [Extensions](docs/variables.md#extensions)
   - [Extra configurations](docs/variables.md#extra-configurations)
 
 ### Examples
