@@ -204,7 +204,7 @@ Role Variables
 | Name                              | Default                      | Description                                                      |
 | :-------------------------------- | :--------------------------- | :--------------------------------------------------------------- |
 | `postgresql_roles`                | `[]`                         | Defines a list of map for instance roles management (see [examples](examples.md#manage-instance-roles-and-privileges))|
-| `postgresql_roles_privileges`     | `[]`                         | Defines a list of map for instance roles privileges management (see [examples](examples.md#manage-instace-roles-and-privileges))|
+| `postgresql_roles_privileges`     | `[]`                         | Defines a list of map for instance roles privileges management (see [examples](examples.md#manage-instance-roles-and-privileges))|
 
 #### Extensions
 
