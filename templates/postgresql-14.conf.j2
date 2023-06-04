@@ -14,7 +14,7 @@ listen_addresses    = '{{ postgresql_listen_addresses }}'
 port                = {{ postgresql_port }}
 max_connections     = {{ postgresql_max_connections }}
 superuser_reserved_connections = {{ postgresql_superuser_reserved_connections }}
-unix_socket_directories = '{{ postgresql_unix_socket_directories }}'
+unix_socket_directories = '{{ postgresql_unix_socket_directories | join(',') }}'
 unix_socket_group       = '{{ postgresql_unix_socket_group }}'
 unix_socket_permissions = {{ postgresql_unix_socket_permissions }}
 
