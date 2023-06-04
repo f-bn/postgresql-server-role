@@ -63,6 +63,7 @@ You can find some configurations examples :
 - [Manage instance databases](docs/examples.md#manage-instance-databases)
 - [Manage instance roles and privileges](docs/examples.md#manage-instance-roles-and-privileges)
 - [Manage PostgreSQL extensions](docs/examples.md#manage-postgresql-extensions)
+- [Use of a dedicated directory/disk for WALs](docs/examples.md#use-of-a-dedicated-directorydisk-for-wals)
 
 ### Install and use this role
 
