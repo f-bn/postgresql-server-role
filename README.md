@@ -4,8 +4,6 @@
 
 ### General informations
 
-***Work-in-progress***
-
 This Ansible role is designed to deploy and configure standalone PostgreSQL instance(s) on target servers.
 
 **Table of Contents**
