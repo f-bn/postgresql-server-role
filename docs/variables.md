@@ -197,20 +197,20 @@ Role Variables
 
 | Name                              | Default                      | Description                                                      |
 | :-------------------------------- | :--------------------------- | :--------------------------------------------------------------- |
-| `postgresql_databases`            | `[]`                         | Defines a list of map for instance databases management (see [examples](examples.md#manage-instance-databases)|
+| `postgresql_databases`            | `[]`                         | Defines a list of map for instance databases management (see [examples](examples.md#manage-instance-databases))|
 
 #### Roles and privileges
 
 | Name                              | Default                      | Description                                                      |
 | :-------------------------------- | :--------------------------- | :--------------------------------------------------------------- |
-| `postgresql_roles`                | `[]`                         | Defines a list of map for instance roles management (see [examples](examples.md#manage-instance-roles-and-privileges)|
-| `postgresql_roles_privileges`     | `[]`                         | Defines a list of map for instance roles privileges management (see [examples](examples.md#manage-roles-and-privileges)|
+| `postgresql_roles`                | `[]`                         | Defines a list of map for instance roles management (see [examples](examples.md#manage-instance-roles-and-privileges))|
+| `postgresql_roles_privileges`     | `[]`                         | Defines a list of map for instance roles privileges management (see [examples](examples.md#manage-instace-roles-and-privileges))|
 
 #### Extensions
 
 | Name                              | Default                      | Description                                                      |
 | :-------------------------------- | :--------------------------- | :--------------------------------------------------------------- |
-| `postgresql_extensions`           | `[]`                         | Defines a list of map for instance extensions management (see [examples](examples.md#manage-postgresql-extensions)|
+| `postgresql_extensions`           | `[]`                         | Defines a list of map for instance extensions management (see [examples](examples.md#manage-postgresql-extensions))|
 
 #### Extra configurations
 
