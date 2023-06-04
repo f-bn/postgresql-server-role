@@ -14,9 +14,9 @@ This Ansible role is designed to deploy and configure standalone PostgreSQL inst
 
 **Supported Platforms**
 
-This role will only supports Ubuntu Server LTS releases :
-
   - Ubuntu 22.04 *Jammy Jellyfish*
+  - Debian 11 *Bullseye*
+  - Red Hat Enterprise Linux 8.x/9.x
 
 **Supported PostgreSQL releases**
 
@@ -37,7 +37,6 @@ The role variables documentation are available here :
 
   - [General](docs/variables.md#general)
   - [Instance initialization](docs/variables.md#instance-initialization)
-  - [Repository and packages](docs/variables.md#repository-and-packages)
   - [File locations](docs/variables.md#file-locations)
   - [Connections and authentication](docs/variables.md#connections-and-authentications)
   - [SSL/TLS](docs/variables.md#ssltls)
@@ -56,7 +55,7 @@ The role variables documentation are available here :
   - [Databases](docs/variables.md#databases)
   - [Roles and privileges](docs/variables.md#roles-and-privileges)
   - [Extensions](docs/variables.md#extensions)
-  - [Extra configurations](docs/variables.md#extra-configurations)
+  - [Miscellaneous](docs/variables.md#miscellaneous)
 
 ### Examples
 

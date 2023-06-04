@@ -15,7 +15,7 @@ Group=postgres
 Environment=PG_OOM_ADJUST_FILE=/proc/self/oom_score_adj
 Environment=PG_OOM_ADJUST_VALUE=0
 ExecStart={{ postgresql_bin_dir }}/postgres -c config_file={{ postgresql_config_dir }}/postgresql.conf
-ExecReload=/usr/bin/kill -HUP $MAINPID
+ExecReload=/bin/kill -HUP $MAINPID
 KillMode=mixed
 KillSignal={{ postgresql_shutdown_signals[postgresql_shutdown_mode] }}
 OOMScoreAdjust=-1000

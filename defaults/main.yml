@@ -26,17 +26,6 @@ postgresql_initdb_checksum_enabled: false
 postgresql_initdb_extra_opts: ""
 
 # -----------------------------------------------------------------------------
-# PACKAGES/REPOS
-# -----------------------------------------------------------------------------
-postgresql_repo_url: "deb [signed-by=/etc/apt/keyrings/postgresql-pgdg.asc] http://apt.postgresql.org/pub/repos/apt {{ ansible_distribution_release }}-pgdg main"
-postgresql_repo_gpgkey_url: "https://www.postgresql.org/media/keys/ACCC4CF8.asc"
-postgresql_packages:
-  - "postgresql-{{ postgresql_release }}={{ postgresql_version }}-1.pgdg{{ ansible_distribution_version }}+1"
-  - "postgresql-client-{{ postgresql_release }}={{ postgresql_version }}-1.pgdg{{ ansible_distribution_version }}+1"
-  - "python3-psycopg2"
-  - "libpq-dev"
-
-# -----------------------------------------------------------------------------
 # CONNECTIONS AND AUTHENTICATION
 # -----------------------------------------------------------------------------
 
@@ -240,3 +229,8 @@ postgresql_tablespaces: []
 # EXTRA CONFIGURATIONS
 # -----------------------------------------------------------------------------
 postgresql_extra_configurations: []
+
+# -----------------------------------------------------------------------------
+# EXTRA PACKAGES
+# -----------------------------------------------------------------------------
+postgresql_extra_packages: []

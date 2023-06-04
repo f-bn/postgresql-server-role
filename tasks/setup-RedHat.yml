@@ -1,0 +1,32 @@
+---
+- name: Ensure PostgreSQL AppStream module is disabled
+  ansible.builtin.copy:
+    dest: /etc/dnf/modules.d/postgresql.module
+    content: |
+      [postgresql]
+      name=postgresql
+      stream=
+      profiles=
+      state=disabled
+    owner: root
+    group: root
+    mode: '0644'
+  when: ansible_distribution_major_version | int >= 8
+
+- name: Ensure PostgreSQL 'common' RPM repository is configured
+  ansible.builtin.yum_repository:
+    name: postgresql-common
+    description: "PostgreSQL common RPMs for {{ ansible_distribution }} $releasever - $basearch"
+    baseurl: "{{ postgresql_repo_common_url }}"
+    enabled: true
+    gpgcheck: true
+    gpgkey: "https://download.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG-{{ postgresql_release }}"
+
+- name: Ensure PostgreSQL 'server' RPM repository is configured
+  ansible.builtin.yum_repository:
+    name: "postgresql-{{ postgresql_release }}"
+    description: "PostgreSQL {{ postgresql_release }} 'stable' for {{ ansible_distribution }} $releasever - $basearch"
+    baseurl: "{{ postgresql_repo_server_url }}"
+    enabled: true
+    gpgcheck: true
+    gpgkey: "https://download.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG-{{ postgresql_release }}"

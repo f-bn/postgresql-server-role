@@ -1,0 +1,4 @@
+---
+postgresql_extra_packages:
+  - "pg_repack_{{ postgresql_release }}"
+  - "pg_cron_{{ postgresql_release }}"

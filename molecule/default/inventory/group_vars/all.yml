@@ -9,15 +9,6 @@ postgresql_wal_dir: "{{ postgresql_root_dir }}/{{ postgresql_release }}/wal"
 # - Database initialization -
 postgresql_initdb_checksum_enabled: true
 
-# - Repository and packages -
-postgresql_packages:
-  - "postgresql-{{ postgresql_release }}={{ postgresql_version }}-1.pgdg{{ ansible_distribution_version }}+1"
-  - "postgresql-client-{{ postgresql_release }}={{ postgresql_version }}-1.pgdg{{ ansible_distribution_version }}+1"
-  - "postgresql-{{ postgresql_release }}-cron"
-  - "postgresql-{{ postgresql_release }}-repack"
-  - "python3-psycopg2"
-  - "libpq-dev"
-
 # - Connection Settings -
 postgresql_listen_addresses: "*"
 

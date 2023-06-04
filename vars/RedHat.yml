@@ -1,0 +1,10 @@
+---
+postgresql_repo_common_url: "https://download.postgresql.org/pub/repos/yum/common/redhat/rhel-$releasever-$basearch"
+postgresql_repo_server_url: "https://download.postgresql.org/pub/repos/yum/{{ postgresql_release }}/redhat/rhel-$releasever-$basearch"
+postgresql_server_packages:
+  - "postgresql{{ postgresql_release }}-server-{{ postgresql_version }}"
+  - "postgresql{{ postgresql_release }}-{{ postgresql_version }}"
+  - "postgresql{{ postgresql_release }}-contrib-{{ postgresql_version }}"
+  - python3-psycopg2
+postgresql_install_dir: "/usr/pgsql-{{ postgresql_release }}"
+postgresql_bin_dir: "{{ postgresql_install_dir }}/bin"

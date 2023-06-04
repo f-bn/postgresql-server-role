@@ -142,17 +142,20 @@ postgresql_roles_privileges:
 
 #### Manage PostgreSQL extensions
 
-You can enable/disable database extensions using this role. Firstly, to use some extensions, you need to install 3rd-party packages. You can update the `postgresql_packages` array for that :
+You can enable/disable database extensions using this role. Firstly, to use some extensions, you need to install 3rd-party packages. You can use the `postgresql_extra_packages` variable for that :
 
 ```YAML
 # Here we want to enable at least 'pg_cron' and 'pg_repack', therefore we need to install 2 additional packages
-postgresql_packages:
-  - "postgresql-{{ postgresql_release }}={{ postgresql_version }}-1.pgdg{{ ansible_distribution_version }}+1"
-  - "postgresql-client-{{ postgresql_release }}={{ postgresql_version }}-1.pgdg{{ ansible_distribution_version }}+1"
+
+# Debian/Ubuntu
+postgresql_extra_packages:
   - "postgresql-{{ postgresql_release }}-cron"
   - "postgresql-{{ postgresql_release }}-repack"
-  - "python3-psycopg2"
-  - "libpq-dev"
+
+# RHEL
+postgresql_extra_packages:
+  - "pg_repack_{{ postgresql_release }}"
+  - "pg_cron_{{ postgresql_release }}"
 ```
 
 Then, some extensions requires some libraries to be loaded on server startup, but also some custom settings must be present in the server configuration file :

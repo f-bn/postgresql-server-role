@@ -1,8 +1,4 @@
 ---
-# - Locations -
-postgresql_install_dir: "/usr/lib/postgresql/{{ postgresql_release }}"
-postgresql_bin_dir: "{{ postgresql_install_dir }}/bin"
-
 # - Signals -
 postgresql_shutdown_signals:
   smart: SIGTERM

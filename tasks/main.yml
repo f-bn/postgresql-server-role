@@ -3,8 +3,19 @@
   ansible.builtin.set_fact:
     postgresql_release: "{{ postgresql_version.split('.')[0] }}"
 
+- name: Include OS-specific variables
+  ansible.builtin.include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+    - "{{ ansible_distribution }}.yml"
+    - "{{ ansible_os_family }}-{{ ansible_distribution_major_version }}.yml"
+    - "{{ ansible_os_family }}.yml"
+
 - name: Pre-installation system tasks
   ansible.builtin.import_tasks: system.yml
+
+- name: OS-specific tasks
+  ansible.builtin.include_tasks: "setup-{{ ansible_os_family }}.yml"
 
 - name: Install PostgreSQL
   ansible.builtin.import_tasks: install.yml

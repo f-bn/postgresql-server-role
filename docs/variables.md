@@ -18,14 +18,6 @@ Role Variables
 | `postgresql_initdb_checksum_enabled`| `false`                      | If set to `true`, enable checksuming on data pages to help detect corruption by the I/O system that would otherwise be silent. Enabling checksums may incur a noticeable performance penalty. |
 | `postgresql_initdb_extra_opts`    | `""`                         | Extra args to pass to the `initdb` command                       |
 
-#### Repository and packages
-
-| Name                              | Default                      | Description                                                      |
-| :-------------------------------- | :--------------------------- | :--------------------------------------------------------------- |
-|`postgresql_repo_url`              | see [defaults](../defaults/main.yml) | Defines the PostgreSQL packages repository URL           |
-|`postgresql_repo_gpgkey_url`       | see [defaults](../defaults/main.yml) | Defines the PostgreSQl packages repository GPG key URL   |
-|`postgresql_packages`              | see [defaults](../defaults/main.yml) | Defines the list of packages to install in order to deploy PostgreSQL (this can also be used to install extra packages like extensions 3rd-party packages) |
-
 #### File locations
 
 | Name                              | Default                      | Description                                                      |
@@ -217,10 +209,11 @@ Role Variables
 | :-------------------------------- | :--------------------------- | :--------------------------------------------------------------- |
 | `postgresql_extensions`           | `[]`                         | Defines a list of map for instance extensions management (see [examples](examples.md#manage-postgresql-extensions))|
 
-#### Extra configurations
+#### Miscellaneous
 
 | Name                              | Default                      | Description                                                      |
 | :-------------------------------- | :--------------------------- | :--------------------------------------------------------------- |
 | `postgresql_extra_configurations` | `[]`                         | Defines a list of extra configuration directives to append in the server configuration (i.e extensions settings) |
+| `postgresql_extra_packages`       | `[]`                         | Defines a list of extra packages to install (i.e extensions 3rd-party packages) |
 
 [Return to main page](../README.md)

@@ -1,0 +1,13 @@
+---
+# - Repository and packages -
+postgresql_repo_url: "deb [signed-by=/etc/apt/keyrings/postgresql-pgdg.asc] http://apt.postgresql.org/pub/repos/apt {{ ansible_distribution_release }}-pgdg main"
+postgresql_repo_gpgkey_url: "https://www.postgresql.org/media/keys/ACCC4CF8.asc"
+postgresql_server_packages:
+  - "postgresql-{{ postgresql_release }}={{ postgresql_version }}-1.pgdg{{ ansible_distribution_version }}+1"
+  - "postgresql-client-{{ postgresql_release }}={{ postgresql_version }}-1.pgdg{{ ansible_distribution_version }}+1"
+  - python3-psycopg2
+  - libpq-dev
+
+# - Locations -
+postgresql_install_dir: "/usr/lib/postgresql/{{ postgresql_release }}"
+postgresql_bin_dir: "{{ postgresql_install_dir }}/bin"

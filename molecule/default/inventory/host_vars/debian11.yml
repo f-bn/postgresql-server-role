@@ -1,0 +1,5 @@
+---
+# - Repository and packages -
+postgresql_extra_packages:
+  - "postgresql-{{ postgresql_release }}-cron"
+  - "postgresql-{{ postgresql_release }}-repack"
