@@ -4,4 +4,4 @@
   tasks:
     - name: Deploy
       ansible.builtin.include_role:
-        name: postgresql
+        name: postgresql_server
