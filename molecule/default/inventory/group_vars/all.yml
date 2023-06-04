@@ -54,6 +54,7 @@ postgresql_roles_privileges:
 postgresql_extensions:
   - name: pg_stat_statements
     state: present
+    databases: ['postgres', 'moleculedb']
   - name: pg_prewarm
     state: present
   - name: pg_buffercache
