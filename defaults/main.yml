@@ -17,6 +17,7 @@ postgresql_home_dir: "{{ postgresql_root_dir }}"
 postgresql_data_dir: "{{ postgresql_root_dir }}/{{ postgresql_release }}/data"
 postgresql_backups_dir: "{{ postgresql_root_dir }}/{{ postgresql_release }}/backups"
 postgresql_config_dir: "/etc/postgresql"
+postgresql_wal_dir: ""
 
 # -----------------------------------------------------------------------------
 # INITDB
@@ -220,10 +221,10 @@ postgresql_ident_entries: []
 postgresql_databases: []
 
 # -----------------------------------------------------------------------------
-# USERS
+# ROLES
 # -----------------------------------------------------------------------------
-postgresql_users: []
-postgresql_users_privileges: []
+postgresql_roles: []
+postgresql_roles_privileges: []
 
 # -----------------------------------------------------------------------------
 # EXTENSIONS

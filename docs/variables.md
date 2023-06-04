@@ -35,6 +35,7 @@ Role Variables
 | `postgresql_data_dir`             | `{{ postgresql_root_dir }}/{{ postgresql_release }}/data` | Defines the directory where PostgreSQL will store database data |
 | `postgresql_backups_dir`          | `{{ postgresql_root_dir }}/{{ postgresql_release }}/backups` | Defines the directory where PostgreSQL backups are stored |
 | `postgresql_config_dir`           | `/etc/postgresql`            | Defines the directory where to store the different PostgreSQL configuration files |
+| `postgresql_wal_dir`              | `""`                         | If the variable is not empty, defines the directory where PostgreSQL WALs will be stored outside of the data directory |
 
 #### Connections and authentications
 

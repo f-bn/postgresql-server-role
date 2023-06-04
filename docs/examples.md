@@ -164,4 +164,14 @@ postgresql_extensions:
     state: present
 ```
 
+#### Use of a dedicated directory/disk for WALs
+
+Some use-cases may require a specific folder to store WALs (i.e on a different disk for performance reasons). You can configure this behavior by simply specifying a folder using the `postgresql_wal_dir` variable :
+
+```YAML
+# The folder will be created (with permissions adjusted) and the '--waldir' flag will be passed
+# to the initdb command.
+postgresql_wal_dir: "{{ postgresql_root_dir }}/{{ postgresql_release }}/wal"
+```
+
 [Return to main page](../README.md)
