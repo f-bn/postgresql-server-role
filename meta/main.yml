@@ -10,4 +10,11 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - 'jammy'
+    - name: Debian
+      versions:
+        - 'bullseye'
+    - name: EL
+      versions:
+        - '8'
+        - '9'
 dependencies: []
