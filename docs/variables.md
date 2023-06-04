@@ -192,6 +192,11 @@ Role Variables
 | :-------------------------------- | :--------------------------- | :--------------------------------------------------------------- |
 | `postgresql_ident_entries`        | `[]`                         | Entries to set inside the `pg_ident.conf` file to manage User Name maps |
 
+#### Tablespaces
+
+| Name                              | Default                      | Description                                                      |
+| :-------------------------------- | :--------------------------- | :--------------------------------------------------------------- |
+| `postgresql_tablespaces`          | `[]`                         | Defines a list of map for instance tablespaces management (see [examples](examples.md#manage-instance-tablespaces))|
 
 #### Databases
 

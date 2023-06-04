@@ -27,12 +27,20 @@ postgresql_shared_preload_libraries:
   - pg_prewarm
   - pg_cron
 
+# - Tablespaces -
+postgresql_tablespaces:
+  - name: tb1
+    path: "{{ postgresql_root_dir }}/{{ postgresql_release }}/tb1"
+    options:
+      random_page_cost: '1.1'
+
 # - Databases -
 postgresql_databases:
   - name: moleculedb
     encoding: UTF-8
     lc_collate: C.UTF-8
     lc_ctype: C.UTF-8
+    tablespace: tb1
 
 # - Roles -
 postgresql_roles:

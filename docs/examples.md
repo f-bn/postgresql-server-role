@@ -86,6 +86,25 @@ postgres=#
 
 More informations in the official SSL/TLS [documentation](https://www.postgresql.org/docs/current/ssl-tcp.html)
 
+#### Manage instance tablespaces
+
+You can manage tablespaces for your database(s) using this role :
+
+```YAML
+postgresql_tablespaces:
+  - name: tb1
+    path: "{{ postgresql_root_dir }}/{{ postgresql_release }}/tb1"
+    owner: user                 # optional
+    options:                    # optional
+      random_page_cost: '1.1'
+    state: present              # optional, present by default
+  - name: tb2
+    path: "{{ postgresql_root_dir }}/{{ postgresql_release }}/tb2"
+    state: present
+```
+
+More informations in the official tablespace [documentation](https://www.postgresql.org/docs/current/manage-ag-tablespaces.html)
+
 #### Manage instance databases
 
 You can create/drop database using this role :
@@ -93,12 +112,14 @@ You can create/drop database using this role :
 ```YAML
 postgresql_databases:
   - name: mydb
-    encoding: UTF-8       # optional
-    lc_collate: C.UTF-8   # optional
-    lc_ctype: C.UTF-8     # optional
-    owner: user1          # optional
-    conn_limit: 25        # optional
-    template: template0   # optional
+    encoding: UTF-8      # optional
+    lc_collate: C.UTF-8  # optional
+    lc_ctype: C.UTF-8    # optional
+    owner: user1         # optional
+    conn_limit: 25       # optional
+    template: template0  # optional
+    tablespace: tb1      # optional
+    state: present       # optional, present by default
 ```
 
 #### Manage instance roles and privileges
@@ -108,11 +129,12 @@ You can also create/drop roles with their according privileges with this role :
 ```YAML
 postgresql_roles:
   - name: johndoe
-    password: johndoe             # optional
-    comment: "The John Doe user"  # optional
-    expires: infinity             # optional
-    role_attr_flags: "LOGIN"      # optional
-    conn_limit: 10                # optional
+    password: johndoe            # optional
+    comment: "The John Doe user" # optional
+    expires: infinity            # optional
+    role_attr_flags: "LOGIN"     # optional
+    conn_limit: 10               # optional
+    state: present               # optional, present by default
 
 postgresql_roles_privileges:
   - { type: database, roles: johndoe,  objects: moleculedb, privileges: 'CONNECT' }

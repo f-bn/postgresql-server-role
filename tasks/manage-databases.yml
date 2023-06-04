@@ -8,6 +8,8 @@
     lc_ctype: "{{ db.lc_ctype | default(omit) }}"
     template: "{{ db.template | default(omit) }}"
     conn_limit: "{{ db.conn_limit | default(omit) }}"
+    tablespace: "{{ db.tablespace | default(omit) }}"
+    state: "{{ db.state | default('present') }}"
   become: true
   become_user: postgres
   with_items: "{{ postgresql_databases }}"

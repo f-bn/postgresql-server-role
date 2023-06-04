@@ -23,6 +23,10 @@ This role will only supports Ubuntu Server LTS releases :
   - PostgreSQL 15.x - **default**
   - PostgreSQL 14.x
 
+**Requirements**
+
+  - `community.postgresql` collection (tested with version `2.4.1`)
+
 **References**
 
   - PostgreSQL : https://www.postgresql.org/
@@ -48,8 +52,9 @@ The role variables documentation are available here :
   - [Error handling](docs/variables.md#error-handling)
   - [pg_hba](docs/variables.md#pg_hba)
   - [pg_ident](docs/variables.md#pg_ident)
-  - [Roles and privileges](docs/variables.md#roles-and-privileges)
+  - [Tablespaces](docs/variables.md#tablespaces)
   - [Databases](docs/variables.md#databases)
+  - [Roles and privileges](docs/variables.md#roles-and-privileges)
   - [Extensions](docs/variables.md#extensions)
   - [Extra configurations](docs/variables.md#extra-configurations)
 
@@ -61,6 +66,7 @@ You can find some configurations examples :
 - [Manage PostgreSQL user name maps (pg_ident)](docs/examples.md#manage-postgresql-user-name-maps-pg_ident)
 - [Manage PostgreSQL synchronous streaming replication parameters](docs/examples.md#manage-postgresql-synchronous-streaming-replication-parameters)
 - [Manage SSL/TLS connections](docs/examples.md#manage-ssltls-connections)
+- [Manage instance tablespaces](docs/examples.md#manage-instance-tablespaces)
 - [Manage instance databases](docs/examples.md#manage-instance-databases)
 - [Manage instance roles and privileges](docs/examples.md#manage-instance-roles-and-privileges)
 - [Manage PostgreSQL extensions](docs/examples.md#manage-postgresql-extensions)
@@ -102,4 +108,4 @@ You can find some configurations examples :
 - [x] Roles management
 - [x] Databases management
 - [x] Extensions management
-- [ ] Tablespaces management
+- [X] Tablespaces management

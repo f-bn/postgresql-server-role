@@ -18,6 +18,9 @@
 - name: Manage PostgreSQL service
   ansible.builtin.import_tasks: service.yml
 
+- name: Manage PostgreSQL instance tablespaces
+  ansible.builtin.import_tasks: manage-tablespaces.yml
+
 - name: Manage PostgreSQL instance databases
   ansible.builtin.import_tasks: manage-databases.yml
 
