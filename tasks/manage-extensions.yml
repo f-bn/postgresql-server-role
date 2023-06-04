@@ -1,5 +1,5 @@
 ---
-- name: Manage '{{ extension.name }}' extension state
+- name: "Manage extension state - {{ extension.name }}"
   community.postgresql.postgresql_ext:
     name: "{{ extension.name }}"
     db: "{{ item }}"
