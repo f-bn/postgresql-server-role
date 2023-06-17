@@ -10,4 +10,3 @@ postgresql_server_packages:
 # - Locations -
 postgresql_install_dir: "/usr/lib/postgresql/{{ postgresql_release }}"
 postgresql_bin_dir: "{{ postgresql_install_dir }}/bin"
-
