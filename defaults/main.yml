@@ -195,8 +195,8 @@ postgresql_restart_after_crash: true
 # -----------------------------------------------------------------------------
 # PG_HBA
 # -----------------------------------------------------------------------------
-postgresql_hba_auth_host: trust
-postgresql_hba_auth_local: trust
+postgresql_hba_auth_host: scram-sha-256
+postgresql_hba_auth_local: peer
 postgresql_hba_entries: []
 
 # -----------------------------------------------------------------------------

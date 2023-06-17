@@ -174,8 +174,8 @@ Role Variables
 
 | Name                              | Default                      | Description                                                      |
 | :-------------------------------- | :--------------------------- | :--------------------------------------------------------------- |
-| `postgresql_hba_auth_local`       | `trust`                      | Specifies the authentication method for local users via Unix-domain socket connections used in `pg_hba.conf` (`local` lines) |
-| `postgresql_hba_auth_host`        | `trust`                      | Specifies the authentication method for local users via TCP/IP connections used in `pg_hba.conf` (`host` lines) |
+| `postgresql_hba_auth_local`       | `peer`                       | Specifies the authentication method for local users via Unix-domain socket connections used in `pg_hba.conf` (`local` lines) |
+| `postgresql_hba_auth_host`        | `scram-sha-256`              | Specifies the authentication method for local users via TCP/IP connections used in `pg_hba.conf` (`host` lines) |
 | `postgresql_hba_entries`          | `[]`                         | Entries to set inside the `pg_hba.conf` file to manage Host-Based Access |
 
 #### pg_ident
